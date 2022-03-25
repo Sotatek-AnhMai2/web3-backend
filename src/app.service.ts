@@ -14,6 +14,10 @@ export class AppService {
     this.client = createClient({
       url: 'https://api.thegraph.com/subgraphs/name/sotatek-anhmai2/web3-learning',
       fetch: fetch,
+      requestPolicy: 'network-only',
+      fetchOptions: {
+        cache: 'no-cache',
+      },
       exchanges: [dedupExchange, cacheExchange, fetchExchange],
     });
   }
